@@ -20,15 +20,26 @@ int isRX() {
   }
 
 }
+float Temp_convert(String str){
+  int i = 0;
+   while(str[i]!='\0'){
+    if(str[0]>='1' && str[0]<= '9' ){
+      
+        Serial.print(str[0]);
+    }
+    i++;
+   }
+  
+}
 
-String SubStringtofloat(String ch) {
+void SubStringtofloat(String ch) {
 int i=0;
 
 String Temp = "";
 String Hundi = "";
 String Realy = "";
 String volt = "";
-String Amp = "";
+
 
 
 while(ch[i]!='\0'){
@@ -50,19 +61,18 @@ else if( i%23 == 10 || i%23 == 12){
 else if( i%23 == 14 || i%23 == 15|| i%23 == 16){
  volt+=ch[i];
 }
-else if(i%23 == 18 || i%23 == 19|| i%23 == 20 || i%23 == 21|| i%23 == 22){
- 
-   
-    Amp+=ch[i];
-   
-}
 
-Serial.print(Temp);
+
+
 
  i++;
 }
+Serial.print(" ");
+
+// Temp_convert(Temp);
+ 
+ Serial.print(Temp);
   
-  return Temp,Hundi,Realy,volt, Amp;
 }
 void SumString(char ch) {
   String S = "";
@@ -74,6 +84,8 @@ void SumString(char ch) {
 
   delay(2000);
   if(sizeof(S)==6&&ch!=NULL){
+   // Serial.println(S);
+   //  Serial.print(" ");
    SubStringtofloat(S);
   }
   //else SumString(ch);
