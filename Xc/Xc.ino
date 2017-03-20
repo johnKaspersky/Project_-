@@ -5,13 +5,22 @@ void isTX(char Tx){
   Serial1.write(Tx);
 }
 
-void isTX( const char *Tx){
-  
- Serial1.write(Tx); 
- Serial.println(Tx);
+void isTX( String str){
+ int i = 0,j=0;
+ while(str[i]!='\0'){
+   Serial1.write(str[i]); 
+   
+  i++;
+    
+ }
+
+ 
+   Serial.println(str);
+
 
   
 }
+double atof( const char *string );
 
 // Prototype Function Regisver Data is Status  //  รับละมาแปลงชนิดข้อมูลอีกที
 int isRX(){
@@ -30,11 +39,13 @@ void setup() {
 }
 
 void loop() {
-isTX("23.21:80.1:1:0:7.5:420.1");
+  String str;
+  int i = 0;
+  str = "50.6:13.2:1:1:8.4";
+isTX(str);
 delay(30);
   isTX('X');
-  
-  delay(2000);
+      delay(2000);
 
 }               
 

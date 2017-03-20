@@ -1,3 +1,5 @@
+
+
 //Run Program On Mega 2560 
 //Com 7
 // LiquidCrystal
@@ -58,6 +60,7 @@ int i = 256,j = 256;
    
     Serial.println(cRX);
     if(cRX=='C'){
+      
   return true;
  }
  else {
