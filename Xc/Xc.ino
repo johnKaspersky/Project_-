@@ -1,3 +1,11 @@
+ //Static value  test
+ float temp = 35.2;
+ float humi = 54.3;
+ boolean  Realy1 = 1;
+  boolean  Realy2 = 0;
+  float Volte = 7.5;
+
+
 void isTX(int Tx){
   Serial1.write(Tx);
 }
@@ -30,6 +38,25 @@ int isRX(){
  }
  
 }
+//void SumString(char ch) {
+//  String S = "";
+//  while (ch != 'X') {
+//    S +=  ch;
+//    ch = isRX();
+//    delay(10);
+//  }
+//
+//  delay(2000);
+//  if (sizeof(S) == 6 && ch != NULL) {
+//      Serial.println(S);
+//    //    gg(S);
+//    //  Serial.print(" ");
+//    // SubStringtofloat(S);
+//  }
+//  //else SumString(ch);
+//
+//
+//}
 
 void setup() {
 
@@ -38,10 +65,10 @@ void setup() {
 }
 
 void loop() {
-  String str;
+  String x = String(temp) + ":" +String(humi)+ ":"+String(Realy1)+":"+String(Realy2)+":"+String(Volte);
  
-  str = "50.6:13.2:1:1:8.4";
-isTX(str);
+ Serial.println(x);
+isTX(x);
 delay(30);
   isTX('X');
       delay(2000);
