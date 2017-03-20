@@ -10,7 +10,11 @@
 #define dNull   0xFFFFFFFF
 #define pNull   NULL
 
-boolean schZone;       /* Dividing 2 scheduling spaces
+tFloat temp=0,humi=0;
+tString str,check;
+boolean schZone;
+boolean statRelay1,statRelay2;
+/* Dividing 2 scheduling spaces
                         true = normal scheduling
                         false = timer scheduling */
 

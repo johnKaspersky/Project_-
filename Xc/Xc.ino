@@ -1,9 +1,9 @@
  //Static value  test
- float temp = 35.2;
- float humi = 54.3;
- boolean  Realy1 = 1;
+ float temp = 0.0;
+ float humi = 0.0;
+ boolean  Realy1 = 0;
   boolean  Realy2 = 0;
-  float Volte = 7.5;
+  float Volte = 0.0;
 
 
 void isTX(int Tx){
