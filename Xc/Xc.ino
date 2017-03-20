@@ -12,10 +12,6 @@ void isTX(int Tx){
 void isTX(char Tx){
   Serial1.write(Tx);
 }
-//void isTX(const char *Tx){
-//  Serial1.write(Tx);
-//  Serial.println(Tx);
-//}
 
 void isTX( String str){
  int i = 0,j=0;
@@ -38,25 +34,22 @@ int isRX(){
  }
  
 }
-//void SumString(char ch) {
-//  String S = "";
-//  while (ch != 'X') {
-//    S +=  ch;
-//    ch = isRX();
-//    delay(10);
-//  }
-//
-//  delay(2000);
-//  if (sizeof(S) == 6 && ch != NULL) {
-//      Serial.println(S);
-//    //    gg(S);
-//    //  Serial.print(" ");
-//    // SubStringtofloat(S);
-//  }
-//  //else SumString(ch);
-//
-//
-//}
+
+String SumFloat() {
+String S = "";
+ S  =  String(temp)+":"+String(humi)+":"+String( Realy1)+":"+String( Realy2)+":"+String(Volte);
+ return S;
+}
+void isString_Float(){
+   delay(2000);
+   isTX(SumFloat());
+  delay(30);
+  isTX('X');
+}
+
+
+
+
 
 void setup() {
 
@@ -65,13 +58,7 @@ void setup() {
 }
 
 void loop() {
-  String x = String(temp) + ":" +String(humi)+ ":"+String(Realy1)+":"+String(Realy2)+":"+String(Volte);
- 
- Serial.println(x);
-isTX(x);
-delay(30);
-  isTX('X');
-      delay(2000);
-
+   Serial.println(SumFloat() );
+  isString_Float();
 }               
 
