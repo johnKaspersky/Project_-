@@ -5,7 +5,6 @@ LiquidCrystal_I2C lcd(0x27, 20, 4);
 float dataRec[] = {0, 0, 0, 0, 0};
 char ch = ' ';
 
-
 void isTX(int Tx) {
   Serial1.write(Tx);
 }
@@ -22,6 +21,7 @@ int isRX() {
   }
 
 }
+
 //float Temp_convert(String str){   // 50.3
 // float i = 0,j =0 ;
 //   while(str[i]!='\0'){
@@ -111,15 +111,16 @@ void gg(char abc) {
     if (ch != ':') //check dif value
       S[i] +=  ch;
     else
+  
       i++; //increase i
-    ch = isRX();
+      ch = isRX();
   }
   delay(2000);
   for (int i = 0; i < 5; i++) {
     dataRec[i] =  S[i].toFloat(); //convers array string to array float
-    Serial.println(S[i]);
-    Serial.print("Float : ");
-    Serial.println(dataRec[i]);
+    Serial.print(S[i] + " ");
+    Serial.print("Float :  ");
+    Serial.print(dataRec[i]);
   }
 }
 //void SumString(char ch) {
@@ -132,7 +133,7 @@ void gg(char abc) {
 //
 //  delay(2000);
 //  if (sizeof(S) == 6 && ch != NULL) {
-//    //  Serial.println(S);
+//      Serial.println(S);
 //    //    gg(S);
 //    //  Serial.print(" ");
 //    // SubStringtofloat(S);
@@ -154,7 +155,7 @@ void setup() {
 void loop() {
   ch = isRX();
 
-
+//SumString(ch);
   gg(ch);
 
 }

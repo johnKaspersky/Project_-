@@ -52,22 +52,12 @@ else  {
   return false;
  }
 
-
-
- 
- 
- 
-
 }
 void Mode_0(){
    // isconection = 0
   Serial.println(" Connection Error "); 
    
 }
-
-
-
-
 
 // Prototype Function Tranfer Data is Operetion int and char Overload function  ตอนส่งพยายามส่งให้ตรงกับรูปแบบข้อมูล
 void isTX(int Tx){
@@ -89,25 +79,6 @@ int isRX(){
   
 }
 }
-
-
-/*
-char int_to_char(int ch){
-  if((ch>=65&& ch<=90)||(ch>=97 && ch<=122)){
-    return ch;
-  }
-  else {
-    Serial.print("int != char");
-  }
- 
-}
-
-*/
-
-
-
-
-
 void setup() {
   //Serial COM
  Serial.begin(9600);
