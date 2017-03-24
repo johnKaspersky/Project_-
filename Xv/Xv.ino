@@ -38,7 +38,7 @@ void String_to_float(char abc) {
 }
 void getData_float(){
    int i=0;
-  while(i<5){
+  while(i<sizeof((dataRec[i]))){
     Serial.println(dataRec[i]);
     i++;
   }
