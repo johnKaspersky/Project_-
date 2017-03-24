@@ -14,12 +14,10 @@ void isTX(char Tx) {
 }
 int isRX() {
   int Rx = 0;
-
   if (Serial1.available()) {
     Rx = Serial1.read();
     return Rx;
   }
-
 }
 
 void String_to_float(char abc) {
@@ -29,7 +27,6 @@ void String_to_float(char abc) {
     if (ch != ':') //check dif value
       S[i] +=  ch;
     else
-
       i++; //increase i
     ch = isRX();
   }
@@ -37,9 +34,14 @@ void String_to_float(char abc) {
   for (int i = 0; i < 5; i++) {
     dataRec[i] =  S[i].toFloat(); //convers array string to array float
   //  Serial.println(dataRec[i]);
-   
   }
-  
+}
+void getData_float(){
+   int i=0;
+  while(i<5){
+    Serial.println(dataRec[i]);
+    i++;
+  }
 }
 void setup() {
   Serial.begin(9600);
@@ -47,18 +49,9 @@ void setup() {
   // Start LCD
   lcd.begin();
   lcd.backlight();
-
-
-
 }
 void loop() {
   ch = isRX();
   String_to_float(ch);
-  int i=0;
-  while(i<5){
-    Serial.println(dataRec[i]);
-    i++;
-  }
-
 }
 
