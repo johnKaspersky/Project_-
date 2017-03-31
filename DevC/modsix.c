@@ -2,7 +2,7 @@
 void main (){
 	int i = 0;
 	while(i<100){
-		printf(" i mod 6 = %d\n",i%22);
+		printf(" i mod 20 = %d\n",i%20);
 		i++;
 	}
 	
